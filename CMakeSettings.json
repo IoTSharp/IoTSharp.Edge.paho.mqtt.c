@@ -1,0 +1,40 @@
+﻿{
+  "configurations": [
+    {
+      "name": "WSL-GCC-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "wslPath": "${defaultWSLPath}",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": [
+        {
+          "name": "PAHO_BUILD_SAMPLES",
+          "value": "True",
+          "type": "BOOL"
+        },
+        {
+          "name": "PAHO_ENABLE_CPACK",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "PAHO_ENABLE_TESTING",
+          "value": "False",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_INSTALL_PREFIX",
+          "value": "${projectDir}/out/install/WSL-GCC-Debug",
+          "type": "PATH"
+        }
+      ]
+    }
+  ]
+}

@@ -4,3 +4,8 @@
 *.swp
 *.pyc
 /build.paho
+/.vs/paho.mqtt.c-master/v16
+/.vs/paho.mqtt.c/v16
+/out
+/.vs/slnx.sqlite
+/.vs

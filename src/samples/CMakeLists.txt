@@ -46,16 +46,18 @@ TARGET_LINK_LIBRARIES(paho_cs_pub paho-mqtt3cs)
 TARGET_LINK_LIBRARIES(paho_cs_sub paho-mqtt3cs)
 
 ADD_EXECUTABLE(MQTTAsync_subscribe MQTTAsync_subscribe.c)
+ADD_EXECUTABLE(IoTClient IoTClient.c)
 ADD_EXECUTABLE(MQTTAsync_publish MQTTAsync_publish.c)
 ADD_EXECUTABLE(MQTTClient_subscribe MQTTClient_subscribe.c)
 ADD_EXECUTABLE(MQTTClient_publish MQTTClient_publish.c)
 ADD_EXECUTABLE(MQTTClient_publish_async MQTTClient_publish_async.c)
 
 SET_TARGET_PROPERTIES(
-     MQTTAsync_subscribe MQTTAsync_publish MQTTClient_subscribe MQTTClient_publish MQTTClient_publish_async PROPERTIES
+     MQTTAsync_subscribe IoTClient  MQTTAsync_publish MQTTClient_subscribe MQTTClient_publish MQTTClient_publish_async PROPERTIES
      COMPILE_DEFINITIONS "PAHO_MQTT_IMPORTS=1")
 
 TARGET_LINK_LIBRARIES(MQTTAsync_subscribe paho-mqtt3a)
+TARGET_LINK_LIBRARIES(IoTClient paho-mqtt3c)
 TARGET_LINK_LIBRARIES(MQTTAsync_publish paho-mqtt3a)
 TARGET_LINK_LIBRARIES(MQTTClient_subscribe paho-mqtt3c)
 TARGET_LINK_LIBRARIES(MQTTClient_publish paho-mqtt3c)
@@ -66,6 +68,7 @@ INSTALL(TARGETS paho_c_sub
                 paho_cs_sub
                 paho_cs_pub
                 MQTTAsync_subscribe
+                IoTClient
                 MQTTAsync_publish
                 MQTTClient_subscribe
                 MQTTClient_publish
